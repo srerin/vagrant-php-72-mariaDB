@@ -24,7 +24,6 @@ apt-get update >/dev/null 2>&1
 echo "--- Installing packages ---"
 apt-get -y install php7.2 php7.2-mbstring php7.2-cli >/dev/null 2>&1
 apt-get -y install php7.2-curl php7.2-mcrypt git php7.2-gd php7.2-intl php7.2-xsl php7.2-zip >/dev/null 2>&1
-# phpenmod mcrypt >/dev/null 2>&1
 
 echo "--- Installing apache2 ---"
 apt-get -y install apache2 >/dev/null 2>&1
@@ -35,8 +34,6 @@ apt-get -y install php7.2-mysql mariadb-server mariadb-client >/dev/null 2>&1
 apt-get -y install phpmyadmin 
 
 echo "--- Installing und setup mysql and phpmyadmin ---"
-# cp /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-# ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
 a2enconf phpmyadmin >/dev/null 2>&1
 service apache2 restart >/dev/null 2>&1
 
